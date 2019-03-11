@@ -1,14 +1,12 @@
 ﻿using System;
-using Polly;
+using System.Net.Http;
 
 namespace PollySeven.MyHttpClient
 {
     public class MyService
     {
-        public MyService()
+        public MyService(HttpClient httpClient)
         {
-            // emulate an explicit dependency on Polly
-            var policy = Policy.Handle<Exception>().RetryAsync();
         }
     }
 }
